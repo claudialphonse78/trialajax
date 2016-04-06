@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>login</title>
+    <!-- For mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- For Bootstrap -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="js/jquery-1.11.2.js"></script>
+    <script src="js/validatelogin.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css"/>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    
+	<style>
+		body
+		{
+				
+		}
+		form
+		{
+			margin-top:250px;
+		}
+		#submit
+		{
+			padding-top:70px;
+			margin-top: -95px;
+			background-color:#ec0249;
+			color:white;
+			border-radius: 5px;
+		}
+		.form-control
+		{
+			color:#f9f9f9;
+			font-size:22px;
+		}
+		#register
+		{
+			font-size:17px;
+			border-radius:20px;
+			color:white;
+			background-color:red;
+			
+		}
+		@media only screen and (max-width: 500px)
+		{
+			form
+			{
+				margin-top:190px;
+			}
+		}
+                .invalid{border:#FF0000 1px solid;}
+
+	</style>
+        <style>
+  .ui-tooltip {padding: 10px;color: #333;font-size: 12px;background: #FFACAC ;}
+</style>  
+
+</head>
+<body>
+    <div class="formRow">
+                <div id="errorMessage"></div>
+            </div>
+
+<div class="container-fluid">
+  <div id="container">	
+      <form role="form" id="form" type="post">
+		<div class="form-group input-lg">
+			<div class="col-xs-offset-2 col-xs-6">
+				<label for="email"></label>
+                                <input type="email" class="form-control" id="email" placeholder="User ID" name="email"required="true"/>
+			</div>
+		</div>
+		<div class="form-group input-lg">
+			<div class="col-xs-offset-2 col-xs-6">
+				<label for="pwd"></label>
+                                <input type="password" class="form-control" id="password" placeholder="Password"name="password"required="true"/>
+			</div>
+                </div><br>
+		<div class="form-group">
+			<div class="col-xs-offset-8 col-xs-1">
+                            <button type="button" id="submit" class="btn btn-default btn-block" onclick="validLogin()">Submit</button>
+			</div>
+		</div>
+		<br>
+		<p style="margin-left:700px; font-size:22px;"> Not registered yet ? </p>
+		<div class="form-group">
+			<div class="col-xs-offset-7 col-xs-2">
+				<button type="" id="register" class="btn btn-default btn-block">Register   >>></button>
+			</div>
+		</div>
+	</form>
+  </div>
+</div>
+</body>
+</html>
