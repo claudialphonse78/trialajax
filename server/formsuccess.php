@@ -1,15 +1,4 @@
-<html>
-    <head>
-        
-        
-    </head>
-    
-        <body>	
-   
 
-</div>
-    </body>
-</html>
 <?php
 ###### db ##########
 $db_username = 'root';
@@ -24,28 +13,22 @@ $gen=$_REQUEST['gender'];
 $password=$_REQUEST['password'];
 $tel=$_REQUEST['phone'];
 
-
+$connecDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or die('could not connect to database');       
 if (isset($_POST['date']))
      {
     $date=$_REQUEST['date'];
     
      }
 $date=date("Y-m-d h:i:s",strtotime($date));
-
-$connecDB = mysqli_connect($db_host, $db_username, $db_password,$db_name)or die('could not connect to database');       
-
-   $query=mysqli_query($connecDB,"insert into `signup` values('NULL','".$username."','".$password."','".$date."','".$gen."','".$tel."','".$email."')");
-
-$res=mysqli_query($connecDB,$query);
-$idname= mysqli_insert_id($connecDB);
-mysqli_query($connecDB,"insert into `loginjs` values('NULL','".$username."','".$password."')");
-
-
-         
-    echo 'correct';
+if(isset($_POST['username'])){
+    $query2=  mysqli_query($connecDB, "insert into `signup` values('NULL','".$username."','".$password."','".$date."','".$gen."','".$tel."','".$email."')");
+    $query1="insert into `loginjs` values('NULL','".$email."','".$password."')";
+$response=mysqli_query($connecDB,$query1);
+    $response_array = array();
     
-  
-
-        mysqli_close($connecDB);
+  $response_array['status'] = 'correct';
+  echo json_encode($response_array);
+}
+      mysqli_close($connecDB);
 ?>
 

@@ -1,3 +1,5 @@
+create database demo;
+
 CREATE TABLE IF NOT EXISTS `loginjs` (
   `lid` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,

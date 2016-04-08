@@ -10,7 +10,7 @@
  */
 
 
-function validLogin(){
+function register(){
       var valid;	
 	valid = validateContact();
       if(valid){
@@ -19,14 +19,14 @@ function validLogin(){
       type: "POST",
       url: "server/formsuccess.php",
       data:$('#form').serialize(),
+      dataType:'json',
       cache: false,
-      success: function(result){
-               var result=trim(result);
-               
-               if(result=='correct'){
-                     window.location='login_1.html';
+      success: function(data){
+          
+               if(data.status=='correct'){
+                     window.location='success.html';
                }else{
-                    $("#errorMessage").html(result);
+                    $("#errorMessage").html(data.status);
                }
       },
       error:function(e){
